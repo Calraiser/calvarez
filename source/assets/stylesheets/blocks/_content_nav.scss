@@ -1,3 +1,78 @@
-.content_nav {
-  
+.sidebar-submenu {
+  transition: $transition-slow;
+  position: relative;
+  left: -400px;
+  width: 0;
+  z-index: -1;
+  border-right: 1px solid $grey03;
+  min-height: 100vh;
+  opacity: 0;
+  margin-right: 20px;
+  @include padding(50px null null null);
+  ul {
+    margin-top: 40px;
+  }
+  &.active {
+    left: 0;
+    width: 420px;
+    z-index: 1;
+    opacity: 1;
+  }
+
+  .title {
+    @extend %txt-text-positive;
+    @include padding(null 18px null 18px);
+    text-transform: uppercase;
+    &.title-guidelines {
+      &:before {
+        content: '';
+        background: image-url("ic-guidelines-blue-full.svg") no-repeat;
+        @include size(55px);
+        display: inline-block;
+        vertical-align: middle;
+        background-size: 55px;
+      }
+    }
+  }
+  .item {
+    list-style: none;
+    margin-bottom: 25px;
+    @include padding(null 142px null 73px);
+    width: 100%;
+    a {
+      @extend %txt-text-positive;
+    }
+  }
+}
+
+
+
+// to Do
+.sidebar-submenu {
+.item {
+a {
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+
+  &:before {
+    content: '';
+    display: block;
+    height: 1px;
+    @include position(absolute, 100% 100% null 0);
+    background: $grey01;
+    transition: right 0.3s ease;
+    margin-top: 3px;
+  }
+  &:hover,
+  &.active {
+    color: $grey01;
+    &:before {
+      right: 0;
+    }
+  }
+}
+}
 }

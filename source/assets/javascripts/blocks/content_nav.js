@@ -5,6 +5,7 @@ $(document).ready(function(){
 
   $menu.find('a').on('click', function(e){
     e.preventDefault();
+    $(this).toggleClass('active');
     $submenu.toggleClass('active');
   })
 

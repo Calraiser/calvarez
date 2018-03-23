@@ -8,6 +8,7 @@ set :js_dir,      'assets/javascripts'
 activate :autoprefixer
 activate :protect_emails
 activate :livereload
+activate :sprockets
 
 page '/*.xml',  layout: false
 page '/*.json', layout: false
@@ -33,6 +34,23 @@ activate :deploy do |deploy|
   deploy.deploy_method  = :git
   deploy.branch         = 'gh-pages'
   deploy.build_before   = true
+end
+
+
+###
+# Helpers
+###
+
+helpers do
+  def inline_svg name
+    root = Middleman::Application.root
+    file_path = "#{root}/source/assets/images/#{name}.svg"
+    if File.exists?(file_path)
+      File.read(file_path)
+    else
+      "<span class='icon-error'>Icon #{name} not found</span>"
+    end
+  end
 end
 
 

@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/middleman/middleman-sprockets.git
+  revision: 5e5197c3e4049845c446dc2b30d0169f2b3c6070
+  branch: master
+  specs:
+    middleman-sprockets (4.1.1)
+      middleman-core (~> 4.0)
+      sprockets (>= 3.0)
+
+GIT
   remote: https://github.com/matsu911/middleman-sitemap
   revision: b52c2256d4188761122804cbb79ceb6cd1afdf6b
   branch: master
@@ -125,9 +134,6 @@ GEM
       middleman-core (>= 3.4)
     middleman-robots (1.2.3)
       middleman (>= 4.0)
-    middleman-sprockets (4.1.1)
-      middleman-core (~> 4.0)
-      sprockets (>= 3.0)
     minitest (5.11.3)
     mqbe (2.0.5)
     multi_json (1.13.1)
@@ -186,7 +192,7 @@ DEPENDENCIES
   middleman-protect-emails (~> 0.4.0)
   middleman-robots (~> 1.2.3)
   middleman-sitemap!
-  middleman-sprockets
+  middleman-sprockets!
   mqbe
   oga (~> 2.8)
   slim (~> 3.0.7)

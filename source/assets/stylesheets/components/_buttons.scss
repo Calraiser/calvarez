@@ -1,0 +1,427 @@
+.link {
+  display: inline-block;
+  position: relative;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  font: 500 14px/24px $f-sans;
+
+  border: 1px solid transparent;
+
+  &:before {
+    content: '';
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 100%; left: 0; right: 100%;
+    background: $c-primary;
+    transition: right 0.3s ease;
+  }
+  &:hover,
+  &.active {
+    color: $c-primary;
+    &:before {
+      right: 0;
+    }
+  }
+  &.uppercase {
+    text-transform: uppercase;
+  }
+  &.with-arrow,
+  &.back,
+  &.down {
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 14px; height: 10px;
+      background: image-url('icons/angle-right-red.svg') no-repeat 50% 50%;
+      background-size: 14px auto;
+      margin-left: 8px;
+    }
+
+    &:hover {
+      &:before {
+        right: 20px;
+      }
+    }
+  }
+  &.inverse {
+    color: #FFF;
+    &:before {
+      background: #FFF;
+    }
+    &.with-arrow:after {
+      background-image: image-url('icons/angle-right.svg');
+    }
+  }
+  &.down {
+    padding-right: 20px;
+    &:after {
+      position: absolute;
+      top: 6px; right: 0;
+      margin-left: 0;
+      transform: rotate(90deg);
+    }
+  }
+  &.back {
+    padding-left: 20px;
+    &:after {
+      position: absolute;
+      top: 6px; left: 0;
+      margin-left: 0;
+      transform: rotate(180deg);
+    }
+    &:before {
+      left: 20px;
+    }
+    &:hover:before {
+      right: 0;
+    }
+  }
+  &.toTop {
+    max-width: 1500px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px; letter-spacing: 4px;
+    margin: 0 auto 70px;
+    display: block;
+    @include media($mobile) {
+      margin-bottom: 40px;
+    }
+    &:before {
+      content: '';
+      position: static;
+      height: 12px;
+      background: image-url('icons/arrow-top-double.svg') no-repeat 50% 50%;
+      background-size: 13px auto;
+      margin: 0 auto 12px;
+      }
+  }
+  &.to-down {
+    max-width: 1500px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px; letter-spacing: 4px;
+    margin: 0 auto 70px;
+    display: block;
+    @include media($mobile) {
+      margin-bottom: 60px;
+    }
+    &:before {
+      content: '';
+      position: relative;
+      height: 12px;
+      background: image-url('icons/arrow-top-double.svg') no-repeat 50% 50%;
+      background-size: 13px auto;
+      margin: 0 auto 12px;
+      transform: rotate(180deg);
+      top: 50px;
+    }
+  }
+
+  &.pdf {
+    padding-left: 28px;
+    line-height: 27px;
+    margin-top: 25px;
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 27px; height: 27px;
+      position: absolute;
+      top: 0; left: 0;
+      margin-left: 0;
+      background: image-url('icons/pdf.svg') no-repeat 50% 50%;
+    }
+  }
+
+  /*
+  &.excel {
+    padding-left: 42px;
+    line-height: 32px;
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 32px; height: 32px;
+      position: absolute;
+      top: 0; left: 0;
+      margin-left: 0;
+      background: image-url('icon-excel') no-repeat 50% 50%;
+    }
+  }
+  */
+  &:active,
+  &:focus {
+    color: $c-primary;
+  }
+}
+
+.cross-bck {
+  background: image-url('trama-cruces.svg') no-repeat right 100%;
+}
+
+//
+// Buttons
+//
+
+.e-btn-primary,
+.e-btn-secondary,
+.e-btn-input {
+  position: relative;
+  display: inline-block;
+  min-width: 180px;
+  padding: 10px 30px 12px;
+
+  overflow: hidden;
+  vertical-align: middle;
+  z-index: 1;
+
+  cursor: pointer;
+
+  font: 500 14px/26px $f-basic;
+  @include media($mobile) {
+    font-size: 12px;
+    width: 100%;
+  }
+
+  text-align: center;
+  text-transform: uppercase;
+
+  transition: all 0.25s ease;
+  &.large {
+    width: 330px;
+    height: 60px;
+    @include media($mobile) {
+      width: 100%;
+    }
+  }
+
+  &.wide {
+    width: 100%;
+  }
+  &.disabled {
+    opacity: 0.3 !important;
+    cursor: default;
+    &:after {
+      display: none;
+    }
+  }
+  &.form-control {
+    line-height: 20px;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0; height: 100%;
+    top: 0; bottom: 0; left: 50%;
+    transition: width 0.35s ease;
+    opacity: 0;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+  &:hover {
+    &:after {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+  &:active,
+  &:focus {
+    outline: 0;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+  }
+}
+
+.e-btn-primary {
+  color: $c-primary;
+  border: 1px solid $c-primary;
+  background: transparent;
+  &:before {
+    background: transparent;
+    border: 1px solid transparent;
+  }
+  &:after {
+    background: #F6F5F5;
+    border: 1px solid #F6F5F5;
+  }
+  &:hover {
+    // color: #fff;
+  }
+}
+
+.e-btn-primary.filled {
+  color: #fff;
+  border: 1px solid $c-primary;
+  background: transparent;
+  &:before {
+    background: $c-primary;
+    border: 0;
+  }
+  &:after {
+    background: $c-primary-dark-hover;
+    border: 0;
+  }
+}
+
+input[type=submit].e-btn-primary.filled,
+button.e-btn-primary.filled {
+  background: $c-primary;
+  &:hover {
+    border: 1px solid $c-primary-dark-hover;
+    background: $c-primary-dark-hover;
+  }
+}
+
+.e-btn-secondary {
+  color: $c-primary;
+  border: 1px solid $c-primary;
+  background: transparent;
+  &:before {
+    background: transparent;
+    border: 1px solid transparent;
+  }
+  &:after {
+    background: #F6F5F5;
+    border: 1px solid #F6F5F5;
+  }
+  &:hover {
+    color: $c-primary;
+  }
+}
+
+.e-btn-secondary.filled {
+  color: #fff;
+  border: 1px solid $c-primary;
+  background: transparent;
+  &:before {
+    background: $c-primary;
+    border: 0;
+  }
+  &:after {
+    background: $c-secondary-light;
+    border: 0;
+  }
+}
+
+.e-btn-primary.inverse {
+  color: #fff;
+  border: 1px solid #67737D;
+  background: transparent;
+  &:before {
+    background: transparent;
+    border: 1px solid transparent;
+  }
+  &:after {
+    background: rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+}
+
+.e-btn-primary.inverse-white {
+  color: #fff;
+  border: 1px solid #fff;
+  background: transparent;
+  &:before {
+    background: transparent;
+    border: 1px solid transparent;
+  }
+  &:after {
+    background: rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+}
+
+.e-btn-primary.inverse.filled {
+  color: #fff;
+  border: 1px solid #67737D;
+  background: transparent;
+  &:before {
+    background: #67737D;
+  }
+  &:after {
+    background: #53606A;
+  }
+}
+
+.e-btn-dotted {
+  @include doted-border-bk;
+  background-size: auto;
+  color: #fff;
+  text-align: left;
+  border: none;
+  border-radius: 5px;
+  font-family: $f-semib;
+  padding: 12px 17px;
+  &:before {
+    z-index: -1;
+  }
+  .icon {
+    svg {
+      position: relative;
+      margin-right: 15px;
+      top: 5px;
+    }
+  }
+  //background: linear-gradient(to right, transparent 0%, $c-border 100%);
+  &.is-selected, &:hover {
+    @include doted-secondary-bk;
+    background-size: auto;
+    .icon {
+      svg {
+        position: relative;
+        margin-right: 15px;
+        top: 5px;
+      }
+    }
+    &:before {
+      z-index: -1;
+    }
+  }
+}
+
+.e-btn-input {
+  background-color: $c-white;
+  border: 1px solid $c-border-over-white;
+  border-radius: 3px;
+  height: 40px;
+  line-height: 20px;
+  padding: 6px 12px;
+  text-align: left;
+  font-size: 12px;
+  text-transform: none;
+  &.advanced-search {
+    background: image-url("icons/calendar-red.svg") calc(100% - 15px) 7px no-repeat;
+    &:after {
+      content: '';
+      background: #fff;
+      height: 40px;
+    }
+  }
+}
+
+.show-filters {
+  border: 1px solid $c-border-over-white;
+  border-radius: 2px;
+  padding: 9px 18px;
+  background: image-url("icons/filters.svg") calc(100% - 15px) 7px no-repeat;
+  height: 40px;
+  a {
+    @extend %txt-dsk-texto;
+    text-transform: none;
+    display: block;
+  }
+}
+
+
+.btn {
+  padding: 15px 30px;
+  border: none;
+  @include media($mobile) {
+    font-size: 12px;
+    width: 100% !important;
+  }
+}

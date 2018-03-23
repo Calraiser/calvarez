@@ -4,13 +4,13 @@ source 'https://rubygems.org'
 
 # Middleman Gems
 gem 'middleman',                '4.2.1'
+gem 'middleman-sprockets', github: 'middleman/middleman-sprockets', branch: 'master'
 gem 'middleman-autoprefixer',   '~> 2.7.1'
 gem 'middleman-compass',        '~> 4.0.1'
 gem 'middleman-minify-html',    '~> 3.4.1'
 gem 'middleman-protect-emails', '~> 0.4.0'
 gem 'middleman-robots',         '~> 1.2.3'
 gem 'middleman-livereload',     '~> 3.4.3'
-gem "middleman-sprockets"
 
 gem 'oga',                      '~> 2.8'
 gem 'slim',                     '~> 3.0.7'

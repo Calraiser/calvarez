@@ -1,7 +1,7 @@
 
-div class="sidebar_submenu"
+.sidebar-submenu
+  h2 class="title title-guidelines" Guidelines
   ul
     - data.content_nav.guidelines.each_with_index do |element, index|
       li class="item"
-        h2 class="title" = element.title
-        = link_to element.link, element.link
+        = link_to element.title, element.title

@@ -7,6 +7,8 @@ $sidebar-width: 105px;
   text-align: center;
   padding-top: 20px;
   background: $white;
+  position: relative;
+  z-index: 999;
   .logo {
     .note {
       @extend %txt-notes-positive;
@@ -25,7 +27,7 @@ $sidebar-width: 105px;
       list-style: none;
       margin-bottom: 100px;
       a {
-        &:hover {
+        &:hover, &.active {
           svg {
             stroke: $blue;
             fill: $white;
