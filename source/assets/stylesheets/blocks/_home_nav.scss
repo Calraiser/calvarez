@@ -1,0 +1,73 @@
+.home-nav {
+  @include position(absolute, null null 50px 0);
+  width: 100%;
+  margin: 0 auto;
+  ul {
+    display: flex;
+    justify-content: center;
+    .item {
+      text-align: center;
+      align-self: flex-end;
+      perspective: 1000;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      .back {
+        .title {
+          font-family: 'Telefonicabold';
+          font-size: rem-calc(18);
+          color: $blue;
+          margin-bottom: 40px;
+        }
+      }
+      &:hover {
+        .flipper {
+          transform: rotateY(180deg);
+        }
+      }
+    }
+
+    .item,
+    .front,
+    .back {
+      width: 100%;
+      height: 250px;
+    }
+    .flipper {
+      transition:  0.6s;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+    .front,
+    .back {
+      backface-visibility: hidden;
+      @include position(absolute, 0 null null 0);
+    }
+
+    .front {
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .back {
+      transform: rotateY(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      background: $grey03;
+      padding: 1rem;
+    }
+  }
+  a {
+    color: $grey01;
+    font-family: 'Telefonicabold';
+    font-size: rem-calc(18);
+    display: block;
+    margin-top: 30px;
+  }
+}

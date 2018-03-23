@@ -1,0 +1,19 @@
+.main-search {
+  background: $grey03;
+  padding: 0 80px;
+  .search {
+    display: flex;
+    align-items: center;
+  }
+  input {
+    background: $grey03;
+    -webkit-appearance:none;
+    outline: none;
+    border: 0;
+    border-radius: 0;
+    padding: 30px 0;
+    margin-left: 15px;
+    width: 100%;
+    @extend %txt-text-positive;
+  }
+}

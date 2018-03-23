@@ -1,0 +1,7 @@
+
+div class="sidebar_submenu"
+  ul
+    - data.content_nav.guidelines.each_with_index do |element, index|
+      li class="item"
+        h2 class="title" = element.title
+        = link_to element.link, element.link

@@ -1,0 +1,110 @@
+%clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+%text-link {
+  text-decoration: none;
+  transition: $transition-slow;
+}
+
+//TITLES AND TEXTS
+%txt-links-positive {
+  @include text-style(14, 22, Telefonicaextralight, $grey01);
+
+  @media (min-width: $mq-medium) {
+    @include text-style(16, 24, Telefonicaextralight, $grey01);
+  }
+}
+
+%txt-title-positive {
+  @include text-style(48, 50, Telefonicaextralight, $grey01);
+
+  @media (min-width: $mq-medium) {
+    @include text-style(48, 50, Telefonicaextralight, $grey01);
+  }
+}
+
+%txt-subtitle-positive {
+  @include text-style(36, 25, Telefonicalight, $blue);
+
+  @media (min-width: $mq-medium) {
+    @include text-style(36, 25, Telefonicalight, $blue);
+  }
+}
+
+%txt-text-positive {
+  @include text-style(18, 24, Telefonicaregular, $grey);
+
+  @media (min-width: $mq-medium) {
+    @include text-style(18, 24, Telefonicaregular, $grey);
+  }
+}
+
+%txt-claim-positive {
+  @include text-style(36, 25, Telefonicalight, $blue);
+
+  @media (min-width: $mq-medium) {
+    @include text-style(36, 25, Telefonicalight, $blue);
+  }
+}
+
+%txt-claim-negative {
+  @include text-style(36, 25, Telefonicalight, $blue);
+
+  @media (min-width: $mq-medium) {
+    @include text-style(36, 25, Telefonicalight, $blue);
+  }
+}
+
+%txt-title-module-positive {
+  @include text-style(36, 25, Telefonicalight, $blue);
+  text-transform: uppercase;
+
+  @media (min-width: $mq-medium) {
+    @include text-style(36, 25, Telefonicalight, $blue);
+  }
+}
+
+%txt-title-module-negative {
+  @include text-style(36, 25, Telefonicalight, $blue);
+
+  @media (min-width: $mq-medium) {
+    @include text-style(36, 25, Telefonicalight, $blue);
+  }
+}
+
+%txt-entry-positive {
+  @include text-style(36, 25, Telefonicalight, $blue);
+
+  @media (min-width: $mq-medium) {
+    @include text-style(36, 25, Telefonicalight, $blue);
+  }
+}
+
+%txt-entry-negative {
+  @include text-style(36, 25, Telefonicalight, $blue);
+
+  @media (min-width: $mq-medium) {
+    @include text-style(36, 25, Telefonicalight, $blue);
+  }
+}
+
+%txt-title-page-positive {
+  @include text-style(36, 25, Telefonicalight, $blue);
+
+  @media (min-width: $mq-medium) {
+    @include text-style(36, 25, Telefonicalight, $blue);
+  }
+}
+
+%txt-notes-positive {
+  @include text-style(10, 15, Telefonicaregular, $blue);
+  text-transform: uppercase;
+  @media (min-width: $mq-medium) {
+    @include text-style(10, 15, Telefonicaregular, $blue);
+  }
+}

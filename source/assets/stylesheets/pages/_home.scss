@@ -1,0 +1,51 @@
+.homepage {
+  overflow: hidden;
+}
+
+.home-intro {
+  min-height: 100vh;
+  padding: 0 80px;
+  overflow: hidden;
+  .homepage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .header {
+      padding-right: 50px;
+      min-width: 350px;
+    }
+    .home-image {
+      svg {
+        max-width: 100%;
+      }
+    }
+    .title {
+      margin: 0 0 15px;
+      }
+      .text {
+        margin-top: 36px;
+        max-width: 330px;
+      }
+  }
+
+  .logo {
+    max-width: 100%;
+    height: 18.75em;
+
+    .body {
+      stroke: $grey;
+      fill: $white;
+      fill-opacity: 1;
+    }
+  }
+}
+
+.home-features {
+  a {
+    color: $grey;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

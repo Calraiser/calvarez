@@ -1,0 +1,26 @@
+$white: #fff;
+$black: #000;
+
+$grey: #4A4A4A;
+$grey01: #999;
+$grey02: #D8D8D8;
+$grey03: #F2F2F2;
+
+$blue: #00AAEE;
+$green: #00EEAA;
+$yellow: #FFF000;
+$orange: #FF7A00;
+$pink: #FF0099;
+$red: #F80000;
+
+$body-color: $white;
+$primary-color: $blue;
+$secondary-color: $green;
+
+$grey-palette: (
+  primary:    $primary-color,
+  secondary:  $secondary-color,
+  success:    #3adb76, // not used
+  warning:    #ffae00, // not used
+  alert:      #cc4b37, // not used
+);

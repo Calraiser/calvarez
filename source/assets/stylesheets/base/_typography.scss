@@ -1,0 +1,32 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  text-rendering: optimizeLegibility;
+  font-style: normal;
+  font-weight: normal;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  &.title {
+    @extend %txt-title-positive;
+  }
+}
+h2 {
+  &.subtitle {
+    @extend %txt-subtitle-positive;
+  }
+}
+p {
+  &.text {
+    @extend %txt-text-positive;
+    &.light {
+      color: $grey01;
+    }
+  }
+}

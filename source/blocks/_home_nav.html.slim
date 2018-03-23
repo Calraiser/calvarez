@@ -1,0 +1,11 @@
+
+ul class="inline-list"
+  - data.home_nav.home_nav.each_with_index do |element, index|
+    li class="item"
+      div class="flipper"
+        div class="front"
+          = svg_tag "#{element.image}"
+        div class="back"
+          h2 class="title" = element.title
+          p class="text" = element.text
+          = link_to 'Ver más', element.link

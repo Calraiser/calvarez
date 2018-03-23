@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    = partial 'layouts/meta_tags'
+    = favicon_tag "logo.jpg"
+    = stylesheet_link_tag :all
+  body class="homepage"
+    = partial 'layouts/logo'
+    = yield
+    = javascript_include_tag :all

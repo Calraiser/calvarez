@@ -1,0 +1,46 @@
+$sidebar-width: 105px;
+
+.sidebar {
+  width: $sidebar-width;
+  border-right: 1px solid $grey03;
+  min-height: 100vh;
+  text-align: center;
+  padding-top: 20px;
+  background: $white;
+  .logo {
+    .note {
+      @extend %txt-notes-positive;
+      display: block;
+
+    }
+    svg {
+      width: 65px;
+    }
+  }
+
+  .sidebar-menu {
+    -webkit-padding-start: 0;
+    margin-top: 80px;
+    li {
+      list-style: none;
+      margin-bottom: 100px;
+      a {
+        &:hover {
+          svg {
+            stroke: $blue;
+            fill: $white;
+            fill-opacity: 1;
+          }
+        }
+      }
+      svg {
+        stroke: $grey02;
+        fill: $white;
+        fill-opacity: 1;
+        transition: $transition-slow;
+
+      }
+
+    }
+  }
+}

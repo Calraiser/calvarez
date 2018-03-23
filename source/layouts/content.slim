@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    = partial 'layouts/meta_tags'
+    = favicon_tag "logo.jpg"
+    = stylesheet_link_tag :all
+  body class="content"
+    div class="main-content"
+      div class="sidebar"
+        = partial 'layouts/sidebar'
+      div class="main-content-wrapper"
+        = partial 'blocks/search'
+        = yield
+    = javascript_include_tag :all
